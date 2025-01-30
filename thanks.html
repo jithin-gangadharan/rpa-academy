@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmission Successful - AutoAcademy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Keep existing CSS styles -->
+    <style>
+
+:root {
+            --primary: #00ff9d;
+            --secondary: #00b4d8;
+            --dark: #0a192f;
+            --light: #ccd6f6;
+        }
+
+            /* Cyberpunk Graphic Elements */
+    .hologram-effect {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hologram-effect::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 25%,
+            rgba(0,255,157,0.1) 50%,
+            transparent 75%
+        );
+        animation: hologram 4s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes hologram {
+        0% { transform: rotate(0deg) translate(-25%, -25%); }
+        100% { transform: rotate(360deg) translate(-25%, -25%); }
+    }
+
+    .circuit-pattern {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50h20m60 0h20M50 0v20m0 60v20" stroke="%2300ff9d" stroke-width="1" opacity="0.2"/></svg>');
+        background-size: 50px;
+    }
+
+    .cyber-icon {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(0 0 5px var(--primary));
+    }
+
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+
+        @keyframes blink-cursor {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+
+        @keyframes hologram {
+            0% { transform: rotate(0deg) translate(-25%, -25%); }
+            100% { transform: rotate(360deg) translate(-25%, -25%); }
+        }
+
+        .hero-typing {
+            display: inline-block;
+            position: relative;
+        }
+
+        .robot-hand {
+            position: absolute;
+            left: -60px;
+            top: -10px;
+            font-size: 2.5rem;
+            animation: robot-hand 0.8s infinite;
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--primary);
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-cursor 0.75s step-end infinite 3.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            padding-top: 60px;
+        }
+
+        .course-heading {
+            color: var(--primary);
+
+        }
+
+        .cyber-border {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Header Styles */
+        .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+        border-bottom: 1px solid rgba(0, 255, 157, 0.3);
+        box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--primary);
+        padding: 12px 25px;
+        margin: 0 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+        text-shadow: 0 0 15px rgba(0, 255, 157, 0.7);
+    }
+
+    nav a:hover::before {
+        width: 100%;
+    }
+
+    nav a:active {
+        background: rgba(0, 255, 157, 0.1);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-left: auto; /* Pushes links to the right */
+    }
+       
+        .logo {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1920') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10,25,47,0.9) 0%, rgba(2,12,27,0.95) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /*animation: textGlow 2s ease-in-out infinite alternate;*/
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(0, 255, 157, 0.3); }
+            to { text-shadow: 0 0 20px rgba(0, 255, 157, 0.7); }
+        }
+
+        /* Course Highlights */
+        .highlights {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            padding: 0 2rem;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .module {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .module {
+        position: relative;
+        transition: transform 0.3s ease;
+        background: linear-gradient(145deg, #0a192f 0%, #020c1b 100%);
+    }
+
+    .module:hover {
+        transform: translateY(-5px);
+    }
+
+    .module::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--primary);
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+        /* Pricing Card */
+        .pricing-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    .course-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .pricing-card {
+        background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid;
+    }
+
+    .beginner-card {
+        border-color: #00ff9d;
+    }
+
+    .advanced-card {
+        border-color: #b026ff;
+    }
+
+    .price-tag {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+        background: linear-gradient(45deg, #00ff9d, #00b4d8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+
+    .course-features {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .course-features li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    /* Interactive Elements */
+    .cta-button {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Location Section */
+
+        .location-section {
+        background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+                    url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .location-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .address-card {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(5px);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 2px solid var(--primary);
+        width: 45%;
+        min-width: 300px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .address-card {
+            width: 100%;
+        }
+    }
+    .contact-button {
+        background: linear-gradient(45deg, #00ff9d, #00b4d8);
+        color: var(--dark);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .contact-button:hover {
+        transform: scale(1.05);
+    }
+
+    /* Section Dividers */
+    .section-divider {
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--primary) 50%, 
+            transparent 100%);
+        margin: 4rem 0;
+        position: relative;
+        animation: dividerGlow 2s infinite;
+    }
+
+    @keyframes dividerGlow {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-cursor {
+        from, to { border-color: transparent }
+        50% { border-color: var(--primary); }
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2.5rem;
+        margin: 0 auto;
+        letter-spacing: 2px;
+        border-right: 3px solid var(--primary);
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-cursor .75s step-end infinite;
+    }
+
+        /* Cyberpunk Form Styling */
+        .cyber-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(0,0,0,0.7);
+        border: 2px solid #00ff9d;
+        box-shadow: 0 0 15px rgba(0,255,157,0.3);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #00ff9d;
+        font-family: 'Lato', monospace;
+    }
+
+    .cyber-input {
+        width: 100%;
+        padding: 12px;
+        background: #0a192f;
+        border: 1px solid #00ff9d;
+        color: #fff;
+        font-family: 'Lato', monospace;
+        transition: all 0.3s ease;
+    }
+
+    .cyber-input:focus {
+        outline: none;
+        box-shadow: 0 0 10px #00ff9d;
+    }
+
+    .gdpr-consent {
+        margin: 2rem 0;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cyber-checkbox {
+        accent-color: #00ff9d;
+        width: 20px;
+        height: 20px;
+    }
+
+    .cyber-select {
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem 0;
+        border: 1px solid var(--primary);
+        background: #0a192f;
+        border: 1px solid #00ff9d;
+        color: #fff;
+        font-family: 'Lato', monospace;
+    }
+
+    .cyber-select:focus {
+        outline: none;
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+    .neon-flicker {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5em;
+    color: #ff00ff;
+  text-shadow: 
+    0 0 15px #ff00ff,
+    0 0 30px #b026ff,
+    0 0 45px #4b0082;
+    animation: flicker 0.1s infinite alternate;
+    }
+
+    @keyframes flicker {
+        0% { opacity: 0.8; text-shadow: 0 0 10px #00ff9d; }
+        30% { opacity: 1; text-shadow: 0 0 15px #00ff9d, 0 0 20px #00b4d8; }
+        60% { opacity: 0.7; text-shadow: 0 0 8px #00ff9d; }
+        100% { opacity: 0.9; text-shadow: 0 0 12px #00ff9d; }
+    }
+
+        /* Add these new styles */
+        .transmission-success {
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hologram-check {
+            width: 120px;
+            height: 120px;
+            margin: 2rem auto;
+            background: linear-gradient(45deg, 
+                #00ff9d 0%, 
+                #00b4d8 50%, 
+                transparent 100%);
+            border-radius: 50%;
+            position: relative;
+            animation: pulseCheck 2s infinite;
+        }
+
+        .hologram-check::before {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: #00ff9d;
+            text-shadow: 0 0 20px #00ff9d;
+        }
+
+        @keyframes pulseCheck {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .data-stream {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0px,
+                transparent 5px,
+                rgba(0,255,157,0.1) 5px,
+                rgba(0,255,157,0.1) 10px
+            );
+            animation: dataFlow 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes dataFlow {
+            from { background-position: 0 0; }
+            to { background-position: 0 100vh; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <div class="nav-container">
+            <div class="logo">AUTOACADEMY</div>
+            <div class="nav-links">
+                <a href="index.html#home">HOME</a>
+                <a href="index.html#learn">HIGHLIGHTS</a>
+                <a href="index.html#curriculum">CURRICULUM</a>
+                <a href="index.html#pricing">PRICING</a>
+                <a href="index.html#contact">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="transmission-success">
+            <div class="data-stream"></div>
+            <div class="hologram-check"></div>
+            <h1 style="color: #00ff9d; font-size: 2.5rem; margin-bottom: 1.5rem;">
+                RESPONSE RECEIVED
+            </h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Your enrollment request has been successfully processed.
+            </p><br/>
+            <div class="cyber-border" style="max-width: 600px; margin: 2rem auto; padding: 2rem;">
+                <h3 style="color: #00ff9d; margin-bottom: 1rem;">NEXT STEPS</h3>
+                <ul style="list-style: none; padding: 0; text-align: left;">
+                    <li style="margin: 1rem 0;">
+                        <span style="color: #00ff9d;">⚡</span> 
+                        Expect confirmation from our team within 24hrs.
+                    </li>
+                    <li style="margin: 1rem 0;">
+                        <span style="color: #00ff9d;">⚡</span> 
+                        Do checkout what is RPA and UiPath.
+                    </li>
+                    <li style="margin: 1rem 0;">
+                        <span style="color: #00ff9d;">⚡</span> 
+                        Prepare your development environment.
+                    </li>
+                </ul>
+            </div>
+            <br/><br/><br/>
+            <a href="index.html#home" class="cta-button" style="margin-top: 2rem; text-decoration: none;">
+                RETURN TO HOMEPAGE
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>

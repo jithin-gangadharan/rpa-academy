@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoAcademy - RPA Mastery 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --secondary: #00b4d8;
+            --dark: #0a192f;
+            --light: #ccd6f6;
+        }
+
+            /* Cyberpunk Graphic Elements */
+    .hologram-effect {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hologram-effect::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 25%,
+            rgba(0,255,157,0.1) 50%,
+            transparent 75%
+        );
+        animation: hologram 4s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes hologram {
+        0% { transform: rotate(0deg) translate(-25%, -25%); }
+        100% { transform: rotate(360deg) translate(-25%, -25%); }
+    }
+
+    .circuit-pattern {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50h20m60 0h20M50 0v20m0 60v20" stroke="%2300ff9d" stroke-width="1" opacity="0.2"/></svg>');
+        background-size: 50px;
+    }
+
+    .cyber-icon {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(0 0 5px var(--primary));
+    }
+
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+
+        @keyframes blink-cursor {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+
+        @keyframes hologram {
+            0% { transform: rotate(0deg) translate(-25%, -25%); }
+            100% { transform: rotate(360deg) translate(-25%, -25%); }
+        }
+
+        .hero-typing {
+            display: inline-block;
+            position: relative;
+        }
+
+        .robot-hand {
+            position: absolute;
+            left: -60px;
+            top: -10px;
+            font-size: 2.5rem;
+            animation: robot-hand 0.8s infinite;
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--primary);
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-cursor 0.75s step-end infinite 3.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            padding-top: 60px;
+        }
+
+        .course-heading {
+            color: var(--primary);
+
+        }
+
+        .cyber-border {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Header Styles */
+        .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+        border-bottom: 1px solid rgba(0, 255, 157, 0.3);
+        box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--primary);
+        padding: 12px 25px;
+        margin: 0 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+        text-shadow: 0 0 15px rgba(0, 255, 157, 0.7);
+    }
+
+    nav a:hover::before {
+        width: 100%;
+    }
+
+    nav a:active {
+        background: rgba(0, 255, 157, 0.1);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-left: auto; /* Pushes links to the right */
+    }
+       
+        .logo {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1920') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10,25,47,0.9) 0%, rgba(2,12,27,0.95) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /*animation: textGlow 2s ease-in-out infinite alternate;*/
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(0, 255, 157, 0.3); }
+            to { text-shadow: 0 0 20px rgba(0, 255, 157, 0.7); }
+        }
+
+        /* Course Highlights */
+        .highlights {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            padding: 0 2rem;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .module {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .module {
+        position: relative;
+        transition: transform 0.3s ease;
+        background: linear-gradient(145deg, #0a192f 0%, #020c1b 100%);
+    }
+
+    .module:hover {
+        transform: translateY(-5px);
+    }
+
+    .module::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--primary);
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+        /* Pricing Card */
+        .pricing-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    .course-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .pricing-card {
+        background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid;
+    }
+
+    .beginner-card {
+        border-color: #00ff9d;
+    }
+
+    .advanced-card {
+        border-color: #b026ff;
+    }
+
+    .price-tag {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+        background: linear-gradient(45deg, #00ff9d, #00b4d8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+
+    .course-features {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .course-features li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    /* Interactive Elements */
+    .cta-button {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Location Section */
+
+        .location-section {
+        background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+                    url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .location-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .address-card {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(5px);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 2px solid var(--primary);
+        width: 45%;
+        min-width: 300px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .address-card {
+            width: 100%;
+        }
+    }
+    .contact-button {
+        background: linear-gradient(45deg, #00ff9d, #00b4d8);
+        color: var(--dark);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .contact-button:hover {
+        transform: scale(1.05);
+    }
+
+    /* Section Dividers */
+    .section-divider {
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--primary) 50%, 
+            transparent 100%);
+        margin: 4rem 0;
+        position: relative;
+        animation: dividerGlow 2s infinite;
+    }
+
+    @keyframes dividerGlow {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-cursor {
+        from, to { border-color: transparent }
+        50% { border-color: var(--primary); }
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2.5rem;
+        margin: 0 auto;
+        letter-spacing: 2px;
+        border-right: 3px solid var(--primary);
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-cursor .75s step-end infinite;
+    }
+
+        /* Cyberpunk Form Styling */
+        .cyber-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(0,0,0,0.7);
+        border: 2px solid #00ff9d;
+        box-shadow: 0 0 15px rgba(0,255,157,0.3);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #00ff9d;
+        font-family: 'Lato', monospace;
+    }
+
+    .cyber-input {
+        width: 100%;
+        padding: 12px;
+        background: #0a192f;
+        border: 1px solid #00ff9d;
+        color: #fff;
+        font-family: 'Lato', monospace;
+        transition: all 0.3s ease;
+    }
+
+    .cyber-input:focus {
+        outline: none;
+        box-shadow: 0 0 10px #00ff9d;
+    }
+
+    .gdpr-consent {
+        margin: 2rem 0;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cyber-checkbox {
+        accent-color: #00ff9d;
+        width: 20px;
+        height: 20px;
+    }
+
+    .cyber-select {
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem 0;
+        border: 1px solid var(--primary);
+        background: #0a192f;
+        border: 1px solid #00ff9d;
+        color: #fff;
+        font-family: 'Lato', monospace;
+    }
+
+    .cyber-select:focus {
+        outline: none;
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+    .neon-flicker {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5em;
+    color: #ff00ff;
+  text-shadow: 
+    0 0 15px #ff00ff,
+    0 0 30px #b026ff,
+    0 0 45px #4b0082;
+    animation: flicker 0.1s infinite alternate;
+    }
+
+    @keyframes flicker {
+        0% { opacity: 0.8; text-shadow: 0 0 10px #00ff9d; }
+        30% { opacity: 1; text-shadow: 0 0 15px #00ff9d, 0 0 20px #00b4d8; }
+        60% { opacity: 0.7; text-shadow: 0 0 8px #00ff9d; }
+        100% { opacity: 0.9; text-shadow: 0 0 12px #00ff9d; }
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+    <div class="nav-container">
+        <div class="logo">AUTOACADEMY</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#learn">HIGHLIGHTS</a>
+            <a href="#curriculum">CURRICULUM</a>
+            <a href="#pricing">PRICING</a>
+            <a href="#contact">CONTACT US</a>
+        </div>
+    </div>
+</nav>
+
+<!-- hero section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="typing-animation">ROBOTIC PROCESS AUTOMATION MASTERY</h1>
+                <div class="neon-flicker">
+                    <span>NEW SESSION STARTING : <b>20 FEBRUARY 2025</b></span>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="#enroll" class="contact-button">
+                        JOIN THE COURSE TODAY
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- Highlights section -->
+ <br/><br/>
+        <section class="highlights">
+            <div class="highlight-card cyber-border">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                    <h3 style="color: var(--primary);">30+ HOURS TRAINING</h3>
+                </div>
+                <p>Comprehensive curriculum covering basics of RPA, UiPath implementation and live examples.</p>
+            </div>
+            <div class="highlight-card cyber-border">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                    <h3 style="color: var(--primary);">LIVE PROJECT TRAINING</h3>
+                </div>
+                <p>Build 15+ real-world automation projects during the course.</p>
+            </div>
+            <div class="highlight-card cyber-border">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                    <h3 style="color: var(--primary);">EXTENSIVE JOB SUPPORT</h3>
+                </div>
+                <p>Includes resume prep, interview training, job placement support and post job support.</p>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <!-- Add this section after the Highlights section -->
+<section id="learn" class="learn-section" style="max-width: 1200px; margin: 4rem auto; padding: 0 2rem;">
+    <br/>
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        WHAT WILL YOU LEARN
+        <br/><br/>
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+        <!-- Learning Item 1 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">EXPERT RPA TECHNIQUES</h3>
+            </div>
+            <p>Learn reliable RPA methods from UiPath Solution Architects.</p>
+        </div>
+
+        <!-- Learning Item 2 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">SETUP & CONFIGURATION</h3>
+            </div>
+            <p>Install UiPath Studio on Windows and manage automation packages.</p>
+        </div>
+
+        <!-- Learning Item 3 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">CORE RPA COMPONENTS</h3>
+            </div>
+            <p>Master UI navigation, activities, and robot logic implementation.</p>
+        </div>
+
+        <!-- Learning Item 4 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">ERROR HANDLING</h3>
+            </div>
+            <p>Implement exception handling for robust automation.</p>
+        </div>
+
+        <!-- Learning Item 5 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">ORCHESTRATION</h3>
+            </div>
+            <p>Schedule and manage robots using Orchestrator.</p>
+        </div>
+
+        <!-- Learning Item 6 -->
+        <div class="cyber-border" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: grid; place-items: center;">⚡</div>
+                <h3 style="color: var(--primary);">ADVANCED FEATURES</h3>
+            </div>
+            <p>Work with advanced features and integrations like Document Understanding.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="curriculum" class="curriculum" style="max-width: 1200px; margin: 4rem auto; padding: 0 2rem;">
+    <br/>
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        COURSE OUTLINE
+        <br/><br/>
+    </h2>
+
+    <div class="module">
+        <h3 class="course-heading">MODULE 01: RPA FOUNDATIONS</h3><br/>
+        <p>Automation Concepts • Process Discovery • Cognitive Automation Basics</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 02: INTRODUCTION TO UIPATH</h3><br/>
+        <p>UiPath Studio Overview • Components of RPA • Types of Bots • Installing UiPath</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 03: VARIABLES, DATA TYPES & CONTROL FLOWS</h3><br/>
+        <p>Variables & Arguments • Data Types & Conversion • Sequences & Flowcharts • Decision Making (If, Switch, Loops)</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 04: EXCEL AUTOMATION</h3><br/>
+        <p>Read & Write Excel Files • Excel Activities • Data Manipulation in Excel • Automating Reports</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 05: WEB AUTOMATION</h3><br/>
+        <p>Web Scraping • Input Fields & Form Handling • Handling Dynamic Elements • Automating Browser Actions</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 06: UI AUTOMATION</h3><br/>
+        <p>Selectors & UI Elements • Click, Type Into & Get Text Activities • Image & Text Automation • Handling Popups & Alerts</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 07: EMAIL AUTOMATION (OUTLOOK & GMAIL)</h3><br/>
+        <p>Sending & Reading Emails • Attachments Handling • Filtering Emails • Automating Outlook Rules</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 08: ORCHESTRATOR & ROBOT DEPLOYMENT</h3><br/>
+        <p>UiPath Orchestrator Overview • Managing Bots • Queues & Assets • Scheduling & Monitoring Processes</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 09: EXCEPTION HANDLING & DEBUGGING</h3><br/>
+        <p>Try-Catch & Error Handling • Debugging Techniques • Logging & Troubleshooting</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 10: REFRAMEWORK (ROBOTIC ENTERPRISE FRAMEWORK)</h3><br/>
+        <p>Understanding REFramework • State Machines & Workflows • Implementing Business Logic</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 11: DOCUMENT UNDERSTANDING</h3><br/>
+        <p>OCR & Intelligent Document Processing • Extracting Data from PDFs & Scanned Files • Training ML Models</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 12: BEST PRACTICES & PERFORMANCE OPTIMIZATION</h3><br/>
+        <p>Efficient Workflow Design • Code Reusability & Modularization • Performance Optimization Techniques</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 13: LIVE PROJECT & CASE STUDY</h3><br/>
+        <p>End-to-End Automation Project • Implementing REFramework • Deployment in Orchestrator</p>
+    </div>
+    
+    <div class="module">
+        <h3 class="course-heading">MODULE 14: INTERVIEW PREPARATION & CERTIFICATION GUIDANCE</h3><br/>
+        <p>UiPath Certification Overview • Mock Interviews • Resume Building for RPA</p>
+    </div>
+    
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Pricing Section HTML -->
+<section id="pricing" class="pricing-container">
+
+    <br/>
+<h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    CHOOSE YOUR AUTOMATION PATH
+    <br/><br/>
+</h2>
+    
+    <div class="course-options">
+        <!-- Beginner Course -->
+        <div class="pricing-card beginner-card">
+            <div style="position: relative; z-index: 1;">
+                <h3 style="color: #00ff9d;">ROBOTIC BEGINNER</h3>
+                <div class="price-tag">$999</div>
+                <ul class="course-features">
+                    <li>⚡ UiPath Studio Installation</li>
+                    <li>⚡ Excel/Outlook Automation</li>
+                    <li>⚡ Basic Web Automation</li>
+                    <li>⚡ Simple UI Automation</li>
+                    <li>⚡ 5 Practice Projects</li>
+                    <li>⚡ Community Support</li>
+                </ul>
+                <button class="cta-button" style="width: 100%;">
+                    <a href="#enroll" style="text-decoration: none; color:#020c1b">START AUTOMATION JOURNEY</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Advanced Course -->
+        <div class="pricing-card advanced-card">
+            <div style="position: relative; z-index: 1;">
+                <h3 style="color: #b026ff;">PRO AUTOMATOR</h3>
+                <div class="price-tag">$1999</div>
+                <ul class="course-features">
+                    <li>⚡ Everything in Beginner +</li>
+                    <li>⚡ Orchestrator Mastery</li>
+                    <li>⚡ ReFramework Architecture</li>
+                    <li>⚡ Document Understanding</li>
+                    <li>⚡ 15 Real-world Projects</li>
+                    <li>⚡ Job Placement Support</li>
+                </ul>
+                <button class="cta-button" style="width: 100%; background: linear-gradient(45deg, #b026ff, #7018a3);">
+                    <a href="#enroll" style="text-decoration: none; color:#020c1b">UNLOCK PRO AUTOMATION</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Contact Form -->
+ <!-- Add this to your contact form section -->
+<section id="enroll" class="section">
+    <br/>
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        ENROLL FOR OUR NEXT CLASS
+        </h2><br/><br/>
+    <form 
+        action="https://formspree.io/f/xgvoywep" 
+        method="POST"
+        class="cyber-form"
+    >
+        <!-- Hidden Redirect After Submission -->
+        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+        
+        <!-- Anti-Spam Field -->
+        <input type="text" name="_gotcha" style="display:none;">
+        
+        <div class="form-group">
+            <label for="name">NAME</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="cyber-input"
+                placeholder="Enter your name"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">EMAIL ID</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="cyber-input"
+                placeholder="Enter your email id"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="message">PHONE NO</label>
+            <input 
+                type="text" 
+                id="phone" 
+                name="phone" 
+                required
+                class="cyber-input"
+                placeholder="Enter your mobile number"
+            ></input>
+        </div>
+
+        <div class="form-group">
+            <label or="message">SELECT COURSE TYPE</label>
+            <select class="cyber-select" name="program-type" required >
+                <option value="beginner">ROBOTIC BEGINNER ($999)</option>
+                <option value="pro">PRO AUTOMATOR ($1999)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">MESSAGE</label>
+            <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required
+                class="cyber-input"
+                placeholder="Tell us about your learning requirement"
+            ></textarea>
+        </div>
+
+
+
+        <button type="submit" class="cta-button glitch">
+            SEND US A MESSAGE
+        </button>
+    </form><br/><br/>
+</section>
+</section>
+
+<section id="contact" class="location-section">
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        CONTACT US
+        <br/><br/>
+    </h2>
+    <div class="location-container">
+        <!-- Chennai Card -->
+        <div class="address-card">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">INDIA</h3>
+            <div style="line-height: 1.6;">
+                <p>Brickverse Apartments</p>
+                <p>No 4, Indira Nagar</p>
+                <p>Selaiyur, Chennai - 600073</p>
+                <p style="line-height: 2; color: var(--primary); font-weight: bold;">📞 +91 80157 57546</p>
+            </div>
+        </div>
+
+        <!-- New Jersey Card -->
+        <div class="address-card">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">USA</h3>
+            <div style="line-height: 1.6;">
+                <p>1245 Hedge Street</p>
+                <p>Piscataway</p>
+                <p>NJ, New Jersey, 08854</p>
+                <p style="line-height: 2; color: var(--primary); font-weight: bold;">📞 +1 (973) 873-4477</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+</body>
+</html>
