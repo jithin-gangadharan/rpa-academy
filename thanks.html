@@ -6,6 +6,7 @@
     <title>Transmission Successful - AutoAcademy</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <!-- Keep existing CSS styles -->
     <style>
 
@@ -597,18 +598,81 @@
             from { background-position: 0 0; }
             to { background-position: 0 100vh; }
         }
+
+        /* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0;
+    }
+}
+
+.nav-logo {
+        height: 40px; /* Maintain aspect ratio */
+        width: auto;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5));
+    }
+
+    .logo-image:hover .nav-logo {
+        filter: 
+            drop-shadow(0 0 10px #00ff9d)
+            brightness(1.2);
+        transform: scale(1.05);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .nav-logo {
+            height: 35px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-logo {
+            height: 30px;
+        }
+    }
     </style>
 </head>
 <body>
+
     <nav class="header">
         <div class="nav-container">
-            <div class="logo">AUTOACADEMY</div>
+            <a href="#" class="logo-image">
+                <img src="logo.png" alt="Botverse Logo" class="nav-logo">
+            </a>
+            <button class="mobile-menu-toggle">☰</button>
             <div class="nav-links">
-                <a href="index.html#home">HOME</a>
-                <a href="index.html#learn">HIGHLIGHTS</a>
-                <a href="index.html#curriculum">CURRICULUM</a>
-                <a href="index.html#pricing">PRICING</a>
-                <a href="index.html#contact">CONTACT US</a>
+                <a href="#home">HOME</a>
+                <a href="#learn">HIGHLIGHTS</a>
+                <a href="#curriculum">CURRICULUM</a>
+                <a href="#pricing">PRICING</a>
+                <a href="#contact">CONTACT US</a>
             </div>
         </div>
     </nav>

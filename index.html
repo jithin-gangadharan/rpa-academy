@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoAcademy - RPA Mastery 2025</title>
+    <title>AutoAcademy - RPA Mastery 2024</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -539,12 +539,194 @@
         100% { opacity: 0.9; text-shadow: 0 0 12px #00ff9d; }
     }
 
+    /* Add this at the end of your existing CSS */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .typing-animation {
+        font-size: 1.5rem;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
+
+    /* Highlights */
+    .highlights {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* Curriculum */
+    .module {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .module h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Pricing */
+    .course-options {
+        grid-template-columns: 1fr;
+    }
+
+    .price-tag {
+        font-size: 2rem;
+    }
+
+    /* Contact Form */
+    .cyber-form {
+        padding: 1rem;
+    }
+
+    /* Learning Section */
+    .learn-section div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Location Cards */
+    .address-card {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* General Typography */
+    h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .neon-flicker {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .cta-button {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Form Elements */
+    .cyber-input, .cyber-select {
+        padding: 0.8rem;
+    }
+
+    /* Module Borders */
+    .module::before {
+        width: 2px;
+    }
+
+    /* Pricing Cards */
+    .pricing-card {
+        padding: 1rem;
+    }
+
+    /* Curriculum Headings */
+    .course-heading {
+        font-size: 1.2rem;
+    }
+
+    /* Contact Section */
+    .location-section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0;
+    }
+}
+
+.nav-logo {
+        height: 40px; /* Maintain aspect ratio */
+        width: auto;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5));
+    }
+
+    .logo-image:hover .nav-logo {
+        filter: 
+            drop-shadow(0 0 10px #00ff9d)
+            brightness(1.2);
+        transform: scale(1.05);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .nav-logo {
+            height: 35px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-logo {
+            height: 30px;
+        }
+    }
+
     </style>
 </head>
 <body>
+
     <nav class="header">
     <div class="nav-container">
-        <div class="logo">AUTOACADEMY</div>
+        <a href="#" class="logo-image">
+            <img src="logo.png" alt="Botverse Logo" class="nav-logo">
+        </a>
+        <button class="mobile-menu-toggle">☰</button>
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#learn">HIGHLIGHTS</a>
@@ -912,4 +1094,11 @@
 
 </main>
 </body>
+
+<script>
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+    </script>
 </html>
